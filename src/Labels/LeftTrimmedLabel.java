@@ -1,7 +1,7 @@
 package Labels;
 
 public class LeftTrimmedLabel implements Label {
-    private Label label;
+    private final Label label;
     public LeftTrimmedLabel(Label l){
         this.label = l;
     }
@@ -10,15 +10,13 @@ public class LeftTrimmedLabel implements Label {
     public String getText() {
         String text = label.getText();
         int charIndex = 0;
-        if(!text.isEmpty()){
-            for(int i = 0; i < text.length(); i++){
-                if(text.charAt(i) != ' '){
-                    charIndex++;
-                    continue;
-                }
-                break;
+        for(char c: text.toCharArray()){
+            if(c == ' '){
+                charIndex++;
+                continue;
             }
+            break;
         }
-        return text;
+        return text.substring(charIndex);
     }
 }
