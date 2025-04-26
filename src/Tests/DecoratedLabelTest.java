@@ -8,14 +8,14 @@ public class DecoratedLabelTest {
     @Test
     public void testGetText(){
         String[] labels = {" ", "example", "  example", "    example   "};
-        DecoratedLabel ltl1 = new DecoratedLabel(new SimpleLabel(labels[0]));
-        DecoratedLabel ltl2 = new DecoratedLabel(new SimpleLabel(labels[1]));
-        DecoratedLabel ltl3 = new DecoratedLabel(new SimpleLabel(labels[2]));
-        DecoratedLabel ltl4 = new DecoratedLabel(new SimpleLabel(labels[3]));
+        DecoratedLabel dl1 = new DecoratedLabel(new SimpleLabel(labels[0]));
+        DecoratedLabel dl2 = new DecoratedLabel(new SimpleLabel(labels[1]));
+        DecoratedLabel dl3 = new DecoratedLabel(new SimpleLabel(labels[2]));
+        DecoratedLabel dl4 = new DecoratedLabel(new SimpleLabel(labels[3]));
 
-        assertEquals("-={   }=-", ltl1.getText());
-        assertEquals("-={ example }=-", ltl2.getText());
-        assertEquals("-={   example }=-", ltl3.getText());
-        assertEquals("-={     example    }=-", ltl4.getText());
+        assertEquals("-={   }=-", dl1.getText());
+        assertEquals("-={ example }=-", dl2.getText());
+        assertEquals("-={   example }=-", dl3.getText());
+        assertEquals("-={     example    }=-", dl4.getText());
     }
 }
